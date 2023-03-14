@@ -11,31 +11,54 @@
 </head>
 <body>
 
-  <h2>Speed check by Varshitha Kollipara</h2>
+  <h2>Varshitha Kollipara Speed Check</h2>
+  <div id="target" >Your time </div>
+  <div id="counter">Count </div>
 
-  <div id="target"> Your time </div>
-  <div id="counter"> Count </div>
   <button type="button"
   class="btn btn-primary"
   onclick="startTime()">
   Start Timer</button>
+
   <button type="button"
   class="btn btn-primary"
   onclick="recordTime()">
   React</button>
-  
-  <p id="target">I will become red </p>
+ 
   
   <script> 
-  let reactTime
+  let reactTime = undefined;
+
+  function randCount(){
+			let num = Math.floor(Math.random()*9 ) + 2;
+			return num;
+  }
 
   function recordTime(){
-    reactTime=undefined;
-    //Set(reactTime)= new Date.now();
-    reactTime= Date.now();
-    console.log(reactTime);
-  }
+	reactTime = Date.now();
+	console.log("React button pressed time: " + reactTime)
+    }
+  function startTime(){
+    let startCount = randCount()
+    for (let i = 0; i < startCount; i++){
+        setTimeout(function(){
+            console.log("Values after " + i)
+            document.getElementById("counter").innerHTML = "Count " + i;
+        }, (startCount-i)*1000)
+    }
+  setTimeout(function(){
+    if (reactTime==undefined){
+        document.getElementById("target").innerHTML = "Too slow"
+    }else{
+        let endTime = Date.now();
+        let difference = endTime - reactTime;
+        document.getElementById("target").innerHTML = "Time was " + difference
+        }
+
+  }, 8000)
+}
   </script>
+
   </body>
   </html>
-  
+Footer

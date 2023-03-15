@@ -5,7 +5,7 @@
         <style>
     .flex-container {
       display: flex;  flex-direction:row;
-      background-color: goldenrod;
+      background-color:seagreen;
   }
 
 .flex-container > div {  /*div children of the flex container*/
@@ -23,7 +23,7 @@
 .btn{
 	box-sizing: 100px;
 	color: white;
-	background-color: rgb(247, 225, 28);
+	background-color: palevioletred;
 	padding: 2px 2px;
 	margin: 2px;
 	height: 40px;
@@ -72,7 +72,7 @@
 			console.log(queueItems)
 			let length_elements = queueItems.length
 			if (length_elements>0){
-				queueItems[length_elements-1].remove()
+				queueItems[0].remove()
 			}
 	}
 	function delay(){
